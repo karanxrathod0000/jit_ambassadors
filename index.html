@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unlock Your Superpowers: A Student's Guide to Gemini Pro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Google Sans', sans-serif;
+            overflow: hidden;
+        }
+        .slide {
+            display: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+            opacity: 0;
+            transform: translateX(20px);
+        }
+        .slide.active.prev {
+             transform: translateX(-20px);
+        }
+        .slide.active {
+            display: flex;
+            opacity: 1;
+            transform: translateX(0);
+        }
+        .nav-button {
+            background: #ffffff;
+            border-radius: 9999px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.2s ease-in-out;
+        }
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        .nav-button:disabled {
+            opacity: 0.5;
+            transform: translateY(0);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .g-blue { color: #4285F4; }
+        .g-red { color: #EA4335; }
+        .g-yellow { color: #FBBC05; }
+        .g-green { color: #34A853; }
+        .gradient-text {
+            background: -webkit-linear-gradient(45deg, #4285F4, #EA4335, #FBBC05, #34A853);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes staggerIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-in { animation: fadeInUp 0.6s ease-out forwards; opacity: 0; }
+        .stagger-child { animation: staggerIn 0.5s ease-out forwards; opacity: 0; }
+        
+        .card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.05);
+            border: 1px solid #e8eaed;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+        }
+        .google-bg {
+            background-color: #F8F9FA;
+            background-image:
+                linear-gradient(to right, #E8EAED 1px, transparent 1px),
+                linear-gradient(to bottom, #E8EAED 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+</head>
+<body class="bg-[#F8F9FA] flex items-center justify-center min-h-screen">
+
+    <main class="w-full h-full relative aspect-video max-w-6xl max-h-[70vh] bg-white rounded-2xl shadow-2xl overflow-hidden">
+        
+        <!-- Slide 1: Title -->
+        <section class="slide active flex-col items-center justify-center text-center p-8 bg-white">
+            <h1 class="text-6xl md:text-8xl font-bold gradient-text animate-in" style="animation-delay: 0.2s;">Unlock Your Superpowers</h1>
+            <h2 class="text-3xl md:text-4xl font-medium text-gray-700 mt-4 animate-in" style="animation-delay: 0.4s;">A Student's Guide to the Google AI Pro Plan</h2>
+            <p class="mt-8 text-lg text-gray-500 animate-in" style="animation-delay: 0.6s;">Presented by your Gemini Student Ambassadors</p>
+        </section>
+
+        <!-- Slide 2: Who We Are -->
+        <section class="slide flex-col items-center justify-center p-12 google-bg">
+            <h2 class="text-4xl font-bold text-gray-800 mb-8 animate-in">Meet Your Ambassadors!</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-5xl text-center">
+                <div class="card p-6 stagger-child" style="animation-delay: 0.2s;">
+                    <img src="https://placehold.co/150x150/4285F4/ffffff?text=KR" class="rounded-full mx-auto shadow-md mb-4 border-4 border-white">
+                    <h3 class="text-2xl font-bold text-gray-900">Karan Rathod</h3>
+                    <p class="g-blue font-semibold">ML & Data Analyst</p>
+                    <p class="text-sm text-gray-600 mt-2 font-['Roboto']">AI & Data Science @ SPPU '26. 3x Intern at Google, AWS, Deloitte. Google Cloud Arcade Legend.</p>
+                </div>
+                <div class="card p-6 stagger-child" style="animation-delay: 0.4s;">
+                    <img src="https://placehold.co/150x150/EA4335/ffffff?text=NN" class="rounded-full mx-auto shadow-md mb-4 border-4 border-white">
+                    <h3 class="text-2xl font-bold text-gray-900">Nitisha Naigaonkar</h3>
+                    <p class="g-red font-semibold">Content & Creative Writer</p>
+                    <p class="text-sm text-gray-600 mt-2 font-['Roboto']">AI & DS Engineer @ SPPU. Generative AI Mastermind with Outskill. Passionate about building smarter solutions.</p>
+                </div>
+                <div class="card p-6 stagger-child" style="animation-delay: 0.6s;">
+                    <img src="https://placehold.co/150x150/34A853/ffffff?text=PP" class="rounded-full mx-auto shadow-md mb-4 border-4 border-white">
+                    <h3 class="text-2xl font-bold text-gray-900">Pranav Patil</h3>
+                    <p class="g-green font-semibold">Core Advisor & Community Builder</p>
+                    <p class="text-sm text-gray-600 mt-2 font-['Roboto']">Core member at CyberX Nashik Community. Passionate about hosting events, managing communities, and fostering innovation.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Slide 3: Section Break 1 -->
+        <section class="slide flex-col items-center justify-center p-12 bg-blue-50">
+            <h2 class="text-lg font-medium tracking-widest text-blue-500 animate-in" style="animation-delay: 0.1s;">PART 1</h2>
+            <h3 class="text-5xl font-bold mt-2 g-blue animate-in" style="animation-delay: 0.3s;">The Ultimate Student Offer</h3>
+            <p class="text-xl mt-4 text-gray-600 animate-in" style="animation-delay: 0.5s;">Why This is a Game-Changer for You</p>
+        </section>
+
+        <!-- Slide 4: THE OFFER -->
+        <section class="slide flex-col items-center justify-center text-center p-12 bg-gradient-to-br from-blue-500 via-purple-500 to-red-500 text-white">
+            <h2 class="text-5xl font-bold mb-4 animate-in">The Big News!</h2>
+            <div class="bg-white/20 p-8 rounded-2xl shadow-2xl max-w-4xl animate-in" style="animation-delay: 0.2s; backdrop-filter: blur(10px);">
+                 <h3 class="text-3xl font-bold">College students get the Google AI Pro upgrade for 1 year...</h3>
+                 <p class="text-8xl font-bold my-4" style="text-shadow: 0 0 15px rgba(255,255,255,0.5);">FREE</p>
+                 <p class="text-2xl font-medium">(That’s a ₹19,500 value!)</p>
+            </div>
+             <p class="mt-6 text-lg text-gray-200 animate-in" style="animation-delay: 0.4s;">Terms apply. For users 18+.</p>
+        </section>
+        
+        <!-- Slide 5: What's Included -->
+        <section class="slide flex-col items-center justify-center p-12 google-bg">
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-8 animate-in">So... What Do You Actually Get?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl">
+                <div class="card text-center p-6 stagger-child" style="animation-delay: 0.2s;"><p class="text-5xl">🧠</p><h3 class="text-2xl font-bold text-gray-800 mt-2">Our Best AI Model</h3><p class="mt-2 text-gray-600 font-['Roboto']">Expanded access to 2.5 Pro for faster, deeper answers.</p></div>
+                <div class="card text-center p-6 stagger-child" style="animation-delay: 0.4s;"><p class="text-5xl">🚀</p><h3 class="text-2xl font-bold text-gray-800 mt-2">Next-Gen Tools</h3><p class="mt-2 text-gray-600 font-['Roboto']">Unlock Deep Research, NotebookLM, Veo 3 Fast, and more.</p></div>
+                <div class="card text-center p-6 stagger-child" style="animation-delay: 0.6s;"><p class="text-5xl">💾</p><h3 class="text-2xl font-bold text-gray-800 mt-2">2 TB of Storage</h3><p class="mt-2 text-gray-600 font-['Roboto']">Across Google Drive, Gmail, and Google Photos.</p></div>
+            </div>
+        </section>
+
+        <!-- Slide 6: Section Break 2 -->
+        <section class="slide flex-col items-center justify-center p-12 bg-red-50">
+             <h2 class="text-lg font-medium tracking-widest text-red-500 animate-in" style="animation-delay: 0.1s;">PART 2</h2>
+            <h3 class="text-5xl font-bold mt-2 g-red animate-in" style="animation-delay: 0.3s;">Your Everyday Toolkit</h3>
+            <p class="text-xl mt-4 text-gray-600 animate-in" style="animation-delay: 0.5s;">How to Ace Your Coursework</p>
+        </section>
+        
+        <!-- Slide 7: Prompting 101 -->
+        <section class="slide flex-col items-center justify-center p-12 google-bg">
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6 animate-in">The #1 Skill: Prompting 101</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-full max-w-5xl">
+                <div class="card p-4 text-center stagger-child" style="animation-delay: 0.2s;"><p class="text-3xl">🎭</p><h3 class="font-bold mt-2">Role</h3><p class="text-sm font-['Roboto'] text-gray-600">"Act as a..."</p></div>
+                <div class="card p-4 text-center stagger-child" style="animation-delay: 0.4s;"><p class="text-3xl">📚</p><h3 class="font-bold mt-2">Context</h3><p class="text-sm font-['Roboto'] text-gray-600">"Here's what you need to know..."</p></div>
+                <div class="card p-4 text-center stagger-child" style="animation-delay: 0.6s;"><p class="text-3xl">🎯</p><h3 class="font-bold mt-2">Task</h3><p class="text-sm font-['Roboto'] text-gray-600">"Your job is to..."</p></div>
+                <div class="card p-4 text-center stagger-child" style="animation-delay: 0.8s;"><p class="text-3xl">📋</p><h3 class="font-bold mt-2">Format</h3><p class="text-sm font-['Roboto'] text-gray-600">"Provide the output as..."</p></div>
+            </div>
+            <div class="mt-6 w-full max-w-5xl animate-in" style="animation-delay: 1s;">
+                <div class="bg-red-100 p-3 rounded-lg text-sm font-['Roboto'] text-red-800"><b>Weak:</b> "Explain photosynthesis."</div>
+                <div class="bg-green-100 p-3 rounded-lg text-sm mt-2 font-['Roboto'] text-green-800"><b>Pro:</b> "<b>Act as a biology tutor.</b> I'm a 10th-grade student struggling with photosynthesis. <b>Explain the process simply, using a cooking analogy.</b> Provide the answer as a series of bullet points."</div>
+            </div>
+        </section>
+        
+        <!-- Slide 8: Homework Help -->
+        <section class="slide flex items-center justify-center p-12 google-bg">
+            <div class="w-1/2 pr-8">
+                <h2 class="text-4xl font-bold text-gray-800 animate-in">Get Unlimited Homework Help</h2>
+                <p class="text-xl text-gray-600 mt-4 font-['Roboto'] animate-in" style="animation-delay: 0.2s;">Stuck on a problem? Upload an image or file and get clear, step-by-step guidance to learn the answer, not just copy it.</p>
+                <p class="mt-4 text-sm text-gray-500 animate-in" style="animation-delay: 0.4s;"><b>Use Case:</b> Quickly understanding a complex diagram from your textbook before a lecture.</p>
+            </div>
+            <div class="w-1/2 card p-6 animate-in" style="animation-delay: 0.3s;">
+                 <h3 class="text-lg font-bold g-red">Example Prompts:</h3>
+                 <ul class="list-disc list-inside mt-2 space-y-2 text-gray-700 font-['Roboto']">
+                     <li class="stagger-child" style="animation-delay: 0.5s;">"Explain photosynthesis step by step using this diagram."</li>
+                     <li class="stagger-child" style="animation-delay: 0.7s;">"Summarise the key arguments in this research paper for me."</li>
+                     <li class="stagger-child" style="animation-delay: 0.9s;">"Talk me through this calculus problem."</li>
+                 </ul>
+            </div>
+        </section>
+
+        <!-- Slide 9: Exam Prep -->
+        <section class="slide flex items-center justify-center p-12 google-bg">
+            <div class="w-1/2 card p-6 animate-in" style="animation-delay: 0.3s;">
+                 <h3 class="text-lg font-bold g-red">Example Prompts:</h3>
+                 <ul class="list-disc list-inside mt-2 space-y-2 text-gray-700 font-['Roboto']">
+                     <li class="stagger-child" style="animation-delay: 0.5s;">"Turn my attached course notes into a study guide."</li>
+                     <li class="stagger-child" style="animation-delay: 0.7s;">"Quiz me on the Cold War based on these lecture slides."</li>
+                     <li class="stagger-child" style="animation-delay: 0.9s;">"Summarise the 5 most important topics from my notes."</li>
+                 </ul>
+            </div>
+            <div class="w-1/2 pl-8">
+                <h2 class="text-4xl font-bold text-gray-800 animate-in">Prep for Exams, Smarter</h2>
+                <p class="text-xl text-gray-600 mt-4 font-['Roboto'] animate-in" style="animation-delay: 0.2s;">Turn your scattered notes into powerful study tools. Stop cramming and start understanding.</p>
+                 <p class="mt-4 text-sm text-gray-500 animate-in" style="animation-delay: 0.4s;"><b>Use Case:</b> Creating a practice test from 3 weeks of lecture notes the night before a midterm.</p>
+            </div>
+        </section>
+
+        <!-- Slide 10: Writing Help -->
+        <section class="slide flex items-center justify-center p-12 google-bg">
+            <div class="w-1/2 pr-8">
+                <h2 class="text-4xl font-bold text-gray-800 animate-in">Perfect Your Writing</h2>
+                <p class="text-xl text-gray-600 mt-4 font-['Roboto'] animate-in" style="animation-delay: 0.2s;">Beat writer's block. Go from first draft to final submission with an AI partner that helps you brainstorm, structure arguments, and refine your work.</p>
+                <p class="mt-4 text-sm text-gray-500 animate-in" style="animation-delay: 0.4s;"><b>Use Case:</b> Refining the tone of a cover letter for an internship application to sound more professional.</p>
+            </div>
+            <div class="w-1/2 card p-6 animate-in" style="animation-delay: 0.3s;">
+                 <h3 class="text-lg font-bold g-red">Example Prompts:</h3>
+                 <ul class="list-disc list-inside mt-2 space-y-2 text-gray-700 font-['Roboto']">
+                     <li class="stagger-child" style="animation-delay: 0.5s;">"Proofread my essay and suggest improvements."</li>
+                     <li class="stagger-child" style="animation-delay: 0.7s;">"Make this paragraph shorter and clearer."</li>
+                     <li class="stagger-child" style="animation-delay: 0.9s;">"Polish my CV to highlight my project management skills."</li>
+                 </ul>
+            </div>
+        </section>
+
+        <!-- Slide 11: Section Break 3 -->
+        <section class="slide flex-col items-center justify-center p-12 bg-yellow-50">
+             <h2 class="text-lg font-medium tracking-widest text-yellow-600 animate-in" style="animation-delay: 0.1s;">PART 3</h2>
+            <h3 class="text-5xl font-bold mt-2 g-yellow animate-in" style="animation-delay: 0.3s;">The Power-Ups</h3>
+            <p class="text-xl mt-4 text-gray-600 animate-in" style="animation-delay: 0.5s;">Next-Level Tools You've Unlocked</p>
+        </section>
+        
+        <!-- Slide 12: Veo -->
+        <section class="slide flex items-center justify-center p-12 google-bg">
+            <div class="w-1/2 pr-8">
+                <p class="g-yellow font-bold animate-in">NEXT-LEVEL TOOL</p>
+                <h2 class="text-4xl font-bold text-gray-800 mt-2 animate-in" style="animation-delay: 0.2s;">Video Generation with Veo 3 Fast</h2>
+                <p class="text-xl text-gray-600 mt-4 font-['Roboto'] animate-in" style="animation-delay: 0.4s;">Turn simple text and images into dynamic videos with custom audio. Perfect for presentations that stand out.</p>
+                <p class="mt-4 text-sm text-gray-500 animate-in" style="animation-delay: 0.6s;"><b>Use Case:</b> Creating a short, engaging video introduction for your final year project presentation.</p>
+            </div>
+            <div class="w-1/2 text-center card p-6 animate-in" style="animation-delay: 0.3s;">
+                <div class="bg-gray-800 p-4 rounded-lg shadow-inner">
+                    <p class="text-white text-left font-mono text-sm">"Create a 15-second video of a futuristic cityscape at night, with flying cars and neon lights. The mood should be exciting and futuristic."</p>
+                </div>
+                <div class="mt-4 text-6xl">🎬</div>
+            </div>
+        </section>
+
+        <!-- Slide 13: Deep Research -->
+        <section class="slide flex items-center justify-center p-12 google-bg">
+            <div class="w-1/2 card p-6 animate-in" style="animation-delay: 0.3s;">
+                <h3 class="text-lg font-bold g-yellow">How it Works:</h3>
+                 <p class="mt-2 text-gray-700 font-['Roboto']">Give it a complex topic like "the impact of AI on the Indian job market". It will generate a detailed report with sources, which you can then explore with follow-up questions.</p>
+            </div>
+            <div class="w-1/2 pl-8">
+                <p class="g-yellow font-bold animate-in">NEXT-LEVEL TOOL</p>
+                <h2 class="text-4xl font-bold text-gray-800 mt-2 animate-in" style="animation-delay: 0.2s;">Deep Research Assistant</h2>
+                <p class="text-xl text-gray-600 mt-4 font-['Roboto'] animate-in" style="animation-delay: 0.4s;">Your smartest research partner. Turn hours of reading into minutes of understanding.</p>
+                <p class="mt-4 text-sm text-gray-500 animate-in" style="animation-delay: 0.6s;"><b>Use Case:</b> Generating a comprehensive literature review for a research paper in a fraction of the time.</p>
+            </div>
+        </section>
+        
+        <!-- Slide 14: Audio Overviews -->
+        <section class="slide flex items-center justify-center p-12 google-bg">
+            <div class="w-1/2 pr-8">
+                <p class="g-yellow font-bold animate-in">NEXT-LEVEL TOOL</p>
+                <h2 class="text-4xl font-bold text-gray-800 mt-2 animate-in" style="animation-delay: 0.2s;">Audio Overviews (Podcasts)</h2>
+                <p class="text-xl text-gray-600 mt-4 font-['Roboto'] animate-in" style="animation-delay: 0.4s;">Turn any file—even your Deep Research reports—into a podcast you can listen to anywhere.</p>
+                <p class="mt-4 text-sm text-gray-500 animate-in" style="animation-delay: 0.6s;"><b>Use Case:</b> Listening to a summary of your lecture notes while commuting to campus.</p>
+            </div>
+            <div class="w-1/2 text-center card p-6 animate-in" style="animation-delay: 0.3s;">
+                <div class="bg-gray-800 p-4 rounded-lg shadow-inner">
+                    <p class="text-white text-left font-mono text-sm">"Take my Deep Research report on the Mughal Empire and turn it into a 10-minute podcast episode."</p>
+                </div>
+                <div class="mt-4 text-6xl">🎧</div>
+            </div>
+        </section>
+        
+        <!-- Slide 15: NotebookLM -->
+        <section class="slide flex items-center justify-center p-12 google-bg">
+             <div class="w-1/2 card p-6 animate-in" style="animation-delay: 0.3s;">
+                <h3 class="text-lg font-bold g-yellow">How it Works:</h3>
+                 <p class="mt-2 text-gray-700 font-['Roboto']">Upload your lecture notes, textbook PDFs, and articles. NotebookLM will answer questions, create study guides, and explain concepts using ONLY the information you've provided.</p>
+            </div>
+            <div class="w-1/2 pl-8">
+                <p class="g-yellow font-bold animate-in">NEXT-LEVEL TOOL</p>
+                <h2 class="text-4xl font-bold text-gray-800 mt-2 animate-in" style="animation-delay: 0.2s;">NotebookLM</h2>
+                <p class="text-xl text-gray-600 mt-4 font-['Roboto'] animate-in" style="animation-delay: 0.4s;">Study and research smarter with a personalized AI notebook that becomes an expert in YOUR course material.</p>
+                 <p class="mt-4 text-sm text-gray-500 animate-in" style="animation-delay: 0.6s;"><b>Use Case:</b> Creating a chatbot that can only answer questions based on your history textbook to help you study without getting distracted by the open web.</p>
+            </div>
+        </section>
+        
+        <!-- Slide 16: Gemini Live -->
+        <section class="slide flex items-center justify-center p-12 google-bg">
+            <div class="w-1/2 pr-8">
+                <p class="g-yellow font-bold animate-in">NEXT-LEVEL TOOL</p>
+                <h2 class="text-4xl font-bold text-gray-800 mt-2 animate-in" style="animation-delay: 0.2s;">Gemini Live</h2>
+                <p class="text-xl text-gray-600 mt-4 font-['Roboto'] animate-in" style="animation-delay: 0.4s;">Have a real-time conversation. Brainstorm ideas out loud, simplify complex topics, and rehearse for presentations with instant, spoken responses.</p>
+                <p class="mt-4 text-sm text-gray-500 animate-in" style="animation-delay: 0.6s;"><b>Use Case:</b> Practicing your viva presentation by having a mock Q&A session with Gemini Live.</p>
+            </div>
+            <div class="w-1/2 text-center card p-6 animate-in" style="animation-delay: 0.3s;">
+                <div class="bg-gray-800 p-4 rounded-lg shadow-inner">
+                    <p class="text-white text-left font-mono text-sm">You can even share your camera or screen to get tailored help, from feedback on a math problem to a complicated part of your textbook.</p>
+                </div>
+                <div class="mt-4 text-6xl">💬</div>
+            </div>
+        </section>
+        
+        <!-- Slide 17: More Integrations -->
+        <section class="slide flex-col items-center justify-center p-12 google-bg">
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-8 animate-in">And It Works Where You Work</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 w-full max-w-4xl text-left">
+                <div class="card p-4 text-center stagger-child" style="animation-delay: 0.2s;"><p class="text-4xl">📄</p><h3 class="text-xl font-bold text-blue-600 mt-2">Docs</h3><p class="text-sm font-['Roboto']">Draft & refine</p></div>
+                <div class="card p-4 text-center stagger-child" style="animation-delay: 0.4s;"><p class="text-4xl">✉️</p><h3 class="text-xl font-bold text-red-600 mt-2">Gmail</h3><p class="text-sm font-['Roboto']">Summarize & reply</p></div>
+                <div class="card p-4 text-center stagger-child" style="animation-delay: 0.6s;"><p class="text-4xl">📊</p><h3 class="text-xl font-bold text-green-600 mt-2">Sheets</h3><p class="text-sm font-['Roboto']">Organize & plan</p></div>
+                <div class="card p-4 text-center stagger-child" style="animation-delay: 0.8s;"><p class="text-4xl">💻</p><h3 class="text-xl font-bold text-yellow-600 mt-2">Slides</h3><p class="text-sm font-['Roboto']">Visualize ideas</p></div>
+            </div>
+            <p class="mt-8 text-2xl font-medium text-gray-700 animate-in" style="animation-delay: 1s;">Easily export your work from Gemini to Google Docs, no copy/paste required!</p>
+        </section>
+
+        <!-- Slide 18: Beyond Coursework -->
+        <section class="slide flex-col items-center justify-center p-12 google-bg">
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-8 animate-in">Beyond Coursework: Career Prep</h2>
+             <div class="w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="card p-6 stagger-child" style="animation-delay: 0.2s;">
+                    <h3 class="text-xl font-bold g-blue mb-2">Internship Hunting</h3>
+                    <p class="font-['Roboto']">Use Gemini to analyze job descriptions, tailor your CV for each application, and generate compelling cover letters. Practice for interviews with Gemini Live.</p>
+                </div>
+                <div class="card p-6 stagger-child" style="animation-delay: 0.4s;">
+                    <h3 class="text-xl font-bold g-green mb-2">Hackathons & Projects</h3>
+                    <p class="font-['Roboto']">Brainstorm project ideas, generate boilerplate code, debug complex issues, and even create marketing copy for your project—all in record time.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Slide 19: Section Break 4 -->
+        <section class="slide flex-col items-center justify-center p-12 bg-green-50">
+             <h2 class="text-lg font-medium tracking-widest text-green-600 animate-in" style="animation-delay: 0.1s;">PART 4</h2>
+            <h3 class="text-5xl font-bold mt-2 g-green animate-in" style="animation-delay: 0.3s;">Your Turn & Next Steps</h3>
+            <p class="text-xl mt-4 text-gray-600 animate-in" style="animation-delay: 0.5s;">Using AI Responsibly and Joining the Community</p>
+        </section>
+
+        <!-- Slide 20: Ethical Use -->
+        <section class="slide flex-col items-center justify-center p-12 bg-yellow-100/50">
+            <h2 class="text-4xl md:text-5xl font-bold text-yellow-800 mb-4 animate-in">Use Your Powers for Good</h2>
+            <p class="text-xl text-center text-yellow-700 mb-6 font-['Roboto'] animate-in" style="animation-delay: 0.2s;">Great power comes with great responsibility. Use AI smartly and ethically.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-5xl">
+                <div class="card p-4 stagger-child" style="animation-delay: 0.4s;"><h3 class="font-bold text-yellow-900">DON'T Plagiarize</h3><p class="font-['Roboto'] text-sm">Never copy and paste. Use it to brainstorm, learn, and refine YOUR own work.</p></div>
+                <div class="card p-4 stagger-child" style="animation-delay: 0.6s;"><h3 class="font-bold text-yellow-900">DO Fact-Check</h3><p class="font-['Roboto'] text-sm">AI can make mistakes ("hallucinate"). Always verify critical information from reliable sources.</p></div>
+                <div class="card p-4 stagger-child" style="animation-delay: 0.8s;"><h3 class="font-bold text-yellow-900">DO Cite Your Tool</h3><p class="font-['Roboto'] text-sm">Ask your professor for their policy. It's good practice to acknowledge you used AI as a tool.</p></div>
+            </div>
+        </section>
+
+        <!-- Slide 21: Live Challenge -->
+        <section class="slide flex-col items-center justify-center text-center p-12 google-bg">
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-2 animate-in">Live Challenge: The 5-Minute Hackathon!</h2>
+            <p class="text-xl text-gray-600 mb-8 font-['Roboto'] animate-in" style="animation-delay: 0.2s;">Let's put this into practice. Open Gemini on your devices!</p>
+            <div class="w-full max-w-3xl card p-8">
+                <h3 class="text-2xl font-bold g-blue mb-4 animate-in" style="animation-delay: 0.4s;">Your Task:</h3>
+                <p class="text-lg font-['Roboto'] animate-in" style="animation-delay: 0.6s;">"You are the head of a new student club focused on sustainability. Generate a 3-step plan to launch the club on campus. Include a catchy name for the club, one event idea for the first month, and a 2-sentence social media post to announce it."</p>
+                <p class="mt-6 text-lg font-bold animate-in" style="animation-delay: 0.8s;">We'll share the best results in 5 minutes!</p>
+            </div>
+        </section>
+        
+        <!-- Slide 22: Join the Community -->
+        <section class="slide flex-col items-center justify-center text-center p-12 google-bg">
+            <h2 class="text-5xl md:text-6xl font-bold gradient-text mb-6 animate-in">This is Just the Beginning!</h2>
+            <p class="text-2xl text-gray-700 mb-8 font-['Roboto'] animate-in" style="animation-delay: 0.2s;">Let's learn and build together. Join the official campus Gemini community!</p>
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="w-64 h-64 card p-4 animate-in" style="animation-delay: 0.4s;"><img src="https://placehold.co/240x240/ffffff/000000?text=Scan+QR+Code" alt="QR Code Placeholder"></div>
+                <div class="text-left animate-in" style="animation-delay: 0.6s;">
+                    <h3 class="text-2xl font-bold text-gray-800">Scan to join our WhatsApp/Discord Group:</h3>
+                    <ul class="list-disc list-inside text-lg text-gray-700 mt-4 space-y-2 font-['Roboto']">
+                        <li>Get tips & tricks</li>
+                        <li>Share cool prompts</li>
+                        <li>Hear about future workshops</li>
+                        <li>Collaborate on projects</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Slide 23: Q&A -->
+        <section class="slide flex-col items-center justify-center text-center p-12 google-bg">
+            <h2 class="text-6xl font-bold text-gray-800 animate-in">Q&A</h2>
+            <p class="mt-4 text-2xl text-gray-600 font-['Roboto'] animate-in" style="animation-delay: 0.2s;">What's on your mind?</p>
+            <p class="mt-12 text-3xl font-bold gradient-text animate-in" style="animation-delay: 0.4s;">Thank You!</p>
+        </section>
+        
+    </main>
+    
+    <!-- Navigation -->
+    <div class="absolute bottom-5 left-1/2 -translate-x-1/2 flex items-center space-x-4">
+        <button id="prevBtn" class="nav-button p-3">
+            <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+        </button>
+        <div id="slide-counter" class="text-gray-700 font-semibold text-lg font-['Roboto']">1 / 23</div>
+        <button id="nextBtn" class="nav-button p-3">
+            <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+        </button>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const slideCounter = document.getElementById('slide-counter');
+        let currentSlide = 0;
+        let slideDirection = 1;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active', 'prev');
+                if (i === index) {
+                    slide.classList.add('active');
+                    if(slideDirection < 0) slide.classList.add('prev');
+                    
+                    const animatedElements = slide.querySelectorAll('.animate-in, .stagger-child');
+                    animatedElements.forEach(el => {
+                        el.style.animation = 'none';
+                        el.offsetHeight; 
+                        el.style.animation = null; 
+                    });
+                }
+            });
+
+            slideCounter.textContent = `${index + 1} / ${slides.length}`;
+            prevBtn.disabled = index === 0;
+            nextBtn.disabled = index === slides.length - 1;
+        }
+
+        function nextSlide() {
+            if (currentSlide < slides.length - 1) {
+                slideDirection = 1;
+                currentSlide++;
+                showSlide(currentSlide);
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) {
+                slideDirection = -1;
+                currentSlide--;
+                showSlide(currentSlide);
+            }
+        }
+
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') nextSlide();
+            else if (e.key === 'ArrowLeft') prevSlide();
+        });
+
+        showSlide(currentSlide);
+    </script>
+</body>
+</html>
+
